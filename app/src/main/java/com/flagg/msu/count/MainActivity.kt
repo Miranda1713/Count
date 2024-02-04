@@ -8,6 +8,7 @@ import android.widget.TextView
 class MainActivity: AppCompatActivity() {
     private lateinit var tap_button: Button
     private lateinit var tap_count: TextView
+    private val count = Counter()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +16,12 @@ class MainActivity: AppCompatActivity() {
 
         tap_button = findViewById(R.id.tap_button)
         tap_count = findViewById(R.id.tap_count)
+
+        tap_button.setOnClickListener {
+            count.addCount()
+            tap_count.text = count.getCount().toString()
+        }
+    }
 
         class Counter {
             private var count: Int = 0
@@ -25,13 +32,14 @@ class MainActivity: AppCompatActivity() {
                 return count
             }
         }
-
-        tap_button.setOnClickListener {
-            Counter().addCount()
-            tap_count.text = Counter().getCount().toString()
-        }
-    }
 }
+
+
+
+
+
+
+
 
 
         

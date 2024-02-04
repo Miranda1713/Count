@@ -8,9 +8,9 @@
 
     <TextView
         android:id="@+id/tap_count"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/_0"
+        android:text="@string/tap_count"
         android:textAlignment="center"
         android:textSize="60sp" />
 
